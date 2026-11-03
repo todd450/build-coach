@@ -1,0 +1,17 @@
+{
+  "name": "ucla-mba-claude-coach",
+  "owner": {
+    "name": "Todd Holloway"
+  },
+  "metadata": {
+    "description": "Claude Code coaching plugins for UCLA MBA course projects."
+  },
+  "plugins": [
+    {
+      "name": "coach",
+      "source": "./plugins/coach",
+      "description": "Guided team-project kickoff, in-the-moment coach tips, and on-demand feedback on how you work with Claude Code.",
+      "version": "0.1.0"
+    }
+  ]
+}

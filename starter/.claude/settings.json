@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "ucla-mba-claude-coach": {
+      "source": {
+        "source": "github",
+        "repo": "todd450/ucla-mba-claude-coach"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "coach@ucla-mba-claude-coach": true
+  }
+}
