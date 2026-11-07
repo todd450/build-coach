@@ -68,6 +68,28 @@ claude plugin validate plugins/coach
 claude --plugin-dir ./plugins/coach
 ```
 
+### Trying it on your own projects (desktop app)
+
+`--plugin-dir` only works from the terminal. To use the coach in the desktop app's Code tab while you refine it, install it from this folder into the projects you want, one time each:
+
+```bash
+claude plugin marketplace add /path/to/ucla-mba-claude-coach
+```
+
+```bash
+cd ~/code/some-project && claude plugin install coach@ucla-mba-claude-coach --scope local
+```
+
+`--scope local` writes to that project's `.claude/settings.local.json`, which git ignores, so nothing lands in the project's history.
+
+Claude Code installs a copy of the plugin, and `claude plugin update` won't refresh it while the version number is unchanged. After editing, run this from this folder to reinstall the current files (uncommitted edits included) in every project that has the coach:
+
+```bash
+scripts/dev-refresh.sh
+```
+
+Then start a new session in those projects.
+
 ## Tuning
 
 - **Tip frequency and tone:** edit `plugins/coach/hooks/coaching-context.md`. It's injected into every session, so keep it short.
