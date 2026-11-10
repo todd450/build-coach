@@ -1,6 +1,6 @@
 ---
 name: kickoff
-description: Set up a new MBA team course project for working with Claude Code. Interviews the team, recommends an approach that fits their skills, and writes CLAUDE.md, PLAN.md, .gitignore, and a first git checkpoint.
+description: Set up a new MBA team course project for working with Claude Code. Interviews the team, recommends an approach that fits their skills, and writes CLAUDE.md, SPEC.md, PLAN.md, .gitignore, and a first git checkpoint.
 disable-model-invocation: true
 argument-hint: "[one-sentence project idea]"
 allowed-tools: Read
@@ -39,7 +39,8 @@ Read `${CLAUDE_SKILL_DIR}/references/project-types.md` and recommend **one** app
 ## Step 4: Propose the setup, then write it
 Show a short list of the files and folders you'll create, and get a yes. Then create:
 - **CLAUDE.md**, from `${CLAUDE_SKILL_DIR}/templates/CLAUDE.md`. Fill in everything you learned. Leave a clear `TODO` where something is unknown instead of guessing. Set the Coaching section from their answers: experience level is the team's least experienced builder, learning goals are theirs, and `Coach tips: on` unless they asked otherwise.
-- **PLAN.md**, from `${CLAUDE_SKILL_DIR}/templates/PLAN.md`. Work backwards from the deadline into 4–6 milestones, each with a checklist and a "how we'll know it works" line.
+- **SPEC.md**, from `${CLAUDE_SKILL_DIR}/templates/SPEC.md`. Write it before the plan: who it's for, the problem, 3–6 features each with "done when" checks a non-coder can run, and what the team is not doing. Draft it from the interview, then show the feature list and ask the team to correct it before you go on. Explain in one sentence that the spec is the brief Claude builds from, the same way a PRD briefs an engineering team.
+- **PLAN.md**, from `${CLAUDE_SKILL_DIR}/templates/PLAN.md`. Work backwards from the deadline into 4–6 milestones, each with a checklist and a "how we'll know it works" line. Each milestone delivers named features from SPEC.md, and its "how we'll know it works" line points to their checks.
 - **.gitignore**, suited to the stack. Always include `.env`, `.DS_Store`, and data folders that hold confidential partner data.
 - **.env.example** if the project will use API keys. Explain in one sentence why real keys go in `.env` and never in chat or in git.
 - The starter folder layout for the chosen project type. Keep it empty: no app code yet.
@@ -53,7 +54,7 @@ Do **not** create a GitHub repo or push without asking. Do offer: "Want to put t
 ## Step 6: Hand off with three great first prompts
 Finish with:
 1. A two-line summary of what's set up.
-2. **"Your first three prompts"**: three specific, copy-pasteable prompts for milestone 1 of *their* project. Each should model a good brief (goal, context, constraints, what done looks like). Make the first one a planning prompt, for example "Read PLAN.md and propose how to build milestone 1. Don't write code yet."
-3. One line: "Run `/coach:review` any time for feedback on how you're working with Claude."
+2. **"Your first three prompts"**: three specific, copy-pasteable prompts for milestone 1 of *their* project. Each should model a good brief (goal, context, constraints, what done looks like). Make the first one a planning prompt, for example "Read SPEC.md and PLAN.md and propose how to build milestone 1. Don't write code yet."
+3. One line: "Run `/coach:check` when a milestone works, for a second opinion on what was built, and `/coach:review` any time for feedback on how you're working with Claude."
 
 Keep the final message under about 250 words.

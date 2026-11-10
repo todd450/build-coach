@@ -1,6 +1,6 @@
 {
   "name": "coach",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Claude Code coaching for MBA course projects: a guided team-project kickoff, in-the-moment coach tips, and on-demand feedback on how you work with Claude.",
   "author": {
     "name": "Todd Holloway"

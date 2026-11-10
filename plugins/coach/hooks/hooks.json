@@ -1,5 +1,5 @@
 {
-  "description": "Loads the Claude Code coaching brief into every session.",
+  "description": "Loads the Claude Code coaching brief into every session, and stops messages that contain an API key before they are sent.",
   "hooks": {
     "SessionStart": [
       {
@@ -7,6 +7,17 @@
           {
             "type": "command",
             "command": "cat \"${CLAUDE_PLUGIN_ROOT}/hooks/coaching-context.md\""
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/secret-guard.sh\"",
+            "timeout": 5
           }
         ]
       }
