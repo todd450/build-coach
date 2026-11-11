@@ -1,9 +1,9 @@
 {
   "name": "coach",
-  "version": "0.2.0",
-  "description": "Claude Code coaching for MBA course projects: a guided team-project kickoff, in-the-moment coach tips, and on-demand feedback on how you work with Claude.",
+  "version": "0.3.0",
+  "description": "Claude Code coaching for people who direct an AI agent without reading code, on course, work, or personal projects: a guided project kickoff, in-the-moment coach tips, a plain-language second opinion, and feedback on how you work with Claude.",
   "author": {
     "name": "Todd Holloway"
   },
-  "keywords": ["education", "coaching", "mba", "onboarding"]
+  "keywords": ["education", "coaching", "mba", "onboarding", "non-technical", "beginners"]
 }

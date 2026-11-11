@@ -1,24 +1,35 @@
-# Claude Code Coach for MBA course projects
+# Claude Code Coach
 
-A Claude Code plugin that helps students get better at working with Claude **while** they build their team course project.
+A Claude Code plugin that helps people get better at working with Claude **while** they build something. It is for anyone who directs an AI agent without reading the code it writes. It was built for UCLA MBA team course projects, and it works the same way for a project at work or a personal one.
 
-| What | How students use it |
+| What | How it's used |
 |---|---|
-| **Project kickoff** | `/coach:kickoff`: interviews the team, recommends an approach that fits their skills, and writes `CLAUDE.md`, a one-page `SPEC.md` (features with "done when" checks), `PLAN.md`, `.gitignore`, and a first git commit. Ends with three ready-to-use first prompts. |
-| **Second opinion** | `/coach:check`: a fresh reviewer checks what was built against `SPEC.md` and reports, in plain language, what works, what to fix, and the few things the team should look at themselves. |
+| **Project kickoff** | `/coach:kickoff`: asks what the project is for (course, work, or personal), interviews you, recommends an approach that fits your skills, and writes `CLAUDE.md`, a one-page `SPEC.md` (features with "done when" checks), `PLAN.md`, `.gitignore`, and a first git commit. Ends with three ready-to-use first prompts. |
+| **Second opinion** | `/coach:check`: a fresh reviewer checks what was built against `SPEC.md` and reports, in plain language, what works, what to fix, and the few things you should look at yourself. |
 | **Pasted-key guard** | Always on. A message that contains an API key or private key is stopped before it reaches Claude, with instructions for using `.env` instead. |
 | **In-the-moment coaching** | Always on. When there's a real teaching moment (a vague prompt, a huge request with no plan, accepting changes without testing, no commits), Claude adds one short **Coach tip** to the end of its reply. |
-| **Feedback on demand** | `/coach:review`: candid feedback on how they've worked with Claude in this session, with their own prompts rewritten. |
-| **Technique playbook** | Loads automatically when a student asks "how do I get Claude to…?" Fourteen techniques, from beginner to advanced. |
+| **Feedback on demand** | `/coach:review`: candid feedback on how you've worked with Claude in this session, with your own prompts rewritten. |
+| **Technique playbook** | Loads automatically when someone asks "how do I get Claude to…?" Fourteen techniques, from beginner to advanced. |
 
-Teams control the coaching in their project's `CLAUDE.md`:
+The coaching is controlled from the project's `CLAUDE.md`, which `/coach:kickoff` writes:
 
 ```markdown
 ## Coaching
+- Context: course       # or "work", or "personal"
 - Experience level: mixed
 - Learning goals: understand the code well enough to present it
 - Coach tips: on        # or "light", or "off"
 ```
+
+`Context` changes what the coach assumes:
+
+| Context | What the coach assumes | Last milestone in the plan |
+|---|---|---|
+| `course` | A student project, usually a team's, that will be presented and graded. May use a partner company's confidential data. | Presentation-ready |
+| `work` | Colleagues will rely on it. The employer's data and AI-tool rules apply. | Ready to hand over |
+| `personal` | No team, deadline, or audience unless you say so. | Ready to use or share |
+
+A `## Coaching` section with no `Context` line is treated as `course`, so projects set up before version 0.3.0 behave as they did.
 
 ## Repository layout
 
@@ -40,7 +51,7 @@ starter/.claude/settings.json       ← drop into a course starter repo to auto-
 
 This repo is the marketplace: whatever is on `main` is what students install. To ship a change, bump `version` in `plugins/coach/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`, then commit and push.
 
-## Installing it (students)
+## Installing it
 
 **Option A: from a terminal (one time, works in the desktop app afterwards)**
 
