@@ -9,7 +9,7 @@ A Claude Code plugin that helps people get better at working with Claude **while
 | **Pasted-key guard** | Always on. A message that contains an API key or private key is stopped before it reaches Claude, with instructions for using `.env` instead. |
 | **In-the-moment coaching** | Always on. When there's a real teaching moment (a vague prompt, a huge request with no plan, accepting changes without testing, no commits), Claude adds one short **Coach tip** to the end of its reply. |
 | **Feedback on demand** | `/coach:review`: candid feedback on how you've worked with Claude in this session, with your own prompts rewritten. |
-| **Technique playbook** | Loads automatically when someone asks "how do I get Claude to…?" Fourteen techniques, from beginner to advanced. |
+| **Technique playbook** | Loads automatically when someone asks "how do I get Claude to…?" Fifteen techniques, from beginner to advanced. |
 
 The coaching is controlled from the project's `CLAUDE.md`, which `/coach:kickoff` writes:
 
