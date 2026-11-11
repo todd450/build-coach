@@ -19,8 +19,8 @@ If the student has sent fewer than three real requests in this session, say ther
 
 ## Assess five habits
 1. **Briefing**: do requests give the goal, context, constraints, and what done looks like?
-2. **Planning**: are big tasks planned before building and split into steps?
-3. **Verifying**: do they have Claude run, test, or show results before moving on?
+2. **Planning**: is "done" agreed before building (SPEC.md), and are big tasks planned and split into steps?
+3. **Verifying**: do they have Claude run, test, or show results before moving on, and get a second opinion (`/coach:check`) before relying on a milestone?
 4. **Checkpointing**: do they commit working states, and start fresh sessions for new tasks?
 5. **Understanding**: do they ask Claude to explain decisions they'll need to defend?
 

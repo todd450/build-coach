@@ -4,7 +4,7 @@
 {{One paragraph: the problem, who it's for, and why it matters. Written so a new teammate or a fresh Claude session gets it in 30 seconds.}}
 
 ## Deliverable
-{{Type: web app / data analysis / automation / business deliverable}}. Final due {{date}}. Milestones and status: see PLAN.md.
+{{Type: web app / data analysis / automation / business deliverable}}. Final due {{date}}. What "done" means: see SPEC.md. Milestones and status: see PLAN.md.
 
 ## Team
 | Name | Role | Comfort with code |
@@ -18,7 +18,8 @@
 - Secrets live in `.env` (see `.env.example`). Never commit them or paste them into chat.
 - {{If partner data is confidential: Partner data in `data/private/` is confidential. Never upload it to outside services.}}
 - Build in small steps. After each working step, test it, then commit with a clear message.
-- When a milestone is done, check it off in PLAN.md.
+- Build from SPEC.md. If a request goes beyond it or contradicts it, say so and ask whether to update the spec first.
+- When a milestone is done, check it off in PLAN.md and tick the SPEC.md checks it satisfies.
 - Explain non-obvious decisions in plain language. We have to present and defend this work.
 
 ## Coaching
