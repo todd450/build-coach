@@ -1,6 +1,6 @@
 # {{Project name}}: Spec
 
-<!-- One page. This is what "done" means. Claude builds from it and /coach:check reviews against it. Change it when the team changes its mind, and note why in PLAN.md's decisions log. -->
+<!-- One page. This is what "done" means. Claude builds from it and /coach:check reviews against it. Change it when you change your mind, and note why in PLAN.md's decisions log. -->
 
 ## Who it's for
 {{The user, in one or two sentences: who they are and the situation they're in when they need this.}}
@@ -9,7 +9,7 @@
 {{What they can't do well today, and what that costs them.}}
 
 ## What it does
-Each feature is something the user can do, with checks anyone on the team can run without reading code.
+Each feature is something the user can do, with checks anyone can run without reading code.
 
 ### 1. {{Feature, e.g., "Upload a customer list and see churn risk per customer"}}
 Done when:
@@ -23,7 +23,7 @@ Done when:
 <!-- 3–6 features. If a feature needs more than four checks, split it. -->
 
 ## Not doing
-- {{Things the team decided to leave out, e.g., "User accounts and login". Listing them stops Claude from building them anyway.}}
+- {{Things deliberately left out, e.g., "User accounts and login". Listing them stops Claude from building them anyway.}}
 
 ## Open questions
 - {{Anything undecided that affects the build. TODO is fine.}}

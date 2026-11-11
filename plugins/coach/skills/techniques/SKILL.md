@@ -1,11 +1,11 @@
 ---
 name: techniques
-description: Playbook of Claude Code techniques for MBA students, from beginner to advanced (briefing, specs, planning, second-opinion review, verifying, git checkpoints, CLAUDE.md, context management, debugging, safety, teamwork, custom skills). Use when the student asks how to get Claude to do something, what the best way to work is, or wants to level up.
+description: Playbook of Claude Code techniques for people who direct an AI agent without reading code, from beginner to advanced (briefing, specs, planning, second-opinion review, verifying, git checkpoints, CLAUDE.md, context management, debugging, safety, teamwork, custom skills). Use when the user asks how to get Claude to do something, what the best way to work is, or wants to level up.
 ---
 
 # Claude Code techniques playbook
 
-When the student asks how to do something, pick the **one or two** techniques below that fit their question and their level (see CLAUDE.md `## Coaching`). Explain briefly, then show an example prompt drawn from **their** project, not the generic one here. Offer to apply the technique right now.
+When the user asks how to do something, pick the **one or two** techniques below that fit their question, their level, and their context (see CLAUDE.md `## Coaching`). Skip team techniques for someone working alone. Explain briefly, then show an example prompt drawn from **their** project, not the generic one here. Offer to apply the technique right now.
 
 Levels: 🟢 start here · 🟡 once comfortable · 🔵 advanced
 
@@ -38,20 +38,20 @@ A commit is a save point. Commit every time something works.
 - Experiment on a branch: "Create a branch called `try-new-layout` and try the redesign there."
 
 ### 🟢 6. Ask it to explain
-You'll have to present and defend this work.
-- "Explain how this works as if I'm presenting it to my study group."
+Sooner or later you'll have to explain this work to someone: a class, a manager, or whoever takes it over.
+- "Explain how this works as if I'm presenting it to people who weren't here."
 - "What are the trade-offs of the approach you chose? What would you do differently with more time?"
 - "Walk me through this codebase. What's in each folder?"
 
 ### 🟡 7. Get a second opinion
 The Claude that wrote the code tends to think the code is fine. A fresh reviewer that hasn't seen the conversation catches more, the same way a second analyst checks a model.
-- Run `/coach:check` when a milestone works, and before any demo or submission. It checks the work against SPEC.md and tells you the few things to look at yourself.
+- Run `/coach:check` when a milestone works, and before you demo, submit, ship, or share it. It checks the work against SPEC.md and tells you the few things to look at yourself.
 - By hand: "Use a subagent to review the changes since the last commit. Don't tell it what you intended. Have it report anything that could give a wrong number."
 
-### 🟡 8. CLAUDE.md as team memory
-CLAUDE.md loads into every session for every teammate. Put context there instead of repeating it: what you're building, conventions, how to run it, and decisions.
+### 🟡 8. CLAUDE.md as project memory
+CLAUDE.md loads into every session, yours and every teammate's. Put context there instead of repeating it: what you're building, conventions, how to run it, and decisions.
 - "Add to CLAUDE.md that we use metric units and that all charts use our brand colors."
-- Keep it short, current, and committed to git so the whole team shares it.
+- Keep it short, current, and committed to git, so every session and every teammate shares it.
 
 ### 🟡 9. Point at things precisely
 - Type `@` and a filename to reference a file instead of pasting it in.
@@ -72,7 +72,7 @@ Long sessions get sluggish and confused.
 ### 🟡 12. Safety and confidentiality
 - Read permission prompts before approving them. If you don't understand a command, ask "what does this do?" first.
 - API keys and passwords go in `.env`, which is listed in `.gitignore`. Never paste them into chat.
-- Confidential partner data stays in a gitignored folder and should never be uploaded to outside services. Check your course or NDA rules.
+- Confidential data (a partner company's, your employer's, your customers') stays in a gitignored folder and should never be uploaded to outside services. Check your course, employer, or NDA rules.
 
 ### 🔵 13. Teamwork with git and GitHub
 - Each teammate works on a branch and opens a pull request. Ask Claude: "Review this pull request like a senior engineer."
@@ -82,4 +82,4 @@ Long sessions get sluggish and confused.
 ### 🔵 14. Automate your own workflow
 - Repeating the same multi-step request? Turn it into a **custom skill**: "Create a skill that regenerates our charts and exports them for the deck."
 - Use **subagents** for side research: "Use a subagent to research three competitors' pricing pages and summarize them."
-- **Connectors (MCP)** let Claude reach tools like Google Drive or Notion. Ask your instructor which ones are approved.
+- **Connectors (MCP)** let Claude reach tools like Google Drive or Notion. In a course or at work, check which ones are approved before connecting one.

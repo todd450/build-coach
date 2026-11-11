@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # UserPromptSubmit hook: stop a message that contains an API key or private key
-# before it reaches Claude, and tell the student what to do instead.
+# before it reaches Claude, and tell the user what to do instead.
 #
-# Exit 2 blocks the message; what we print to stderr is shown to the student.
+# Exit 2 blocks the message; what we print to stderr is shown to the user.
 # Any other outcome lets the message through, so a failure here never blocks work.
 #
 # To add a pattern, add a line to PATTERNS. Keep them specific (a known prefix
