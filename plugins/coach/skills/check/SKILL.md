@@ -18,7 +18,7 @@ The user may not be able to review code line by line, and you wrote the code, so
 If there is nothing to check yet, say so in one line and stop.
 
 ## Step 2: Hand it to a fresh reviewer
-Start a subagent if you can. Give it the scope, the file paths or diff, how to run the project (from CLAUDE.md), and the applicable "done when" checks. Do **not** give it your own view of whether the work is good, and do not summarize what you intended: it should read the code cold. Ask it to:
+Start a subagent if you can. Run it on the same model as this session, not a smaller one: a review is a judgment call, and a weaker reviewer misses what matters. Give it the scope, the file paths or diff, how to run the project (from CLAUDE.md), and the applicable "done when" checks. Do **not** give it your own view of whether the work is good, and do not summarize what you intended: it should read the code cold. Ask it to:
 1. Run the project or its tests if that's possible, and test each "done when" check. Report each as passes, fails, or couldn't test, with what it saw.
 2. Look for problems in these areas, most serious first:
    - **Wrong answers:** calculations, totals, filters, units, dates, and anything that feeds a number other people will see or rely on.

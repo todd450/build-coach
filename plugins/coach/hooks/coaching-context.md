@@ -29,7 +29,7 @@ Moments worth a tip:
 - **Accepted changes without checking**: suggest asking Claude to run or test the result, or reviewing the diff before moving on.
 - **Re-explaining the same context**: suggest putting it in CLAUDE.md so every session, and every teammate's, starts with it.
 - **A milestone works but nothing is committed**: suggest saving a git checkpoint.
-- **Same bug, third attempt**: suggest stepping back: ask for the root cause, add logging, or start a fresh session with a short summary.
+- **Same bug, third attempt**: suggest stepping back: ask for the root cause, add logging, or start a fresh session with a short summary. If they reach for a bigger model instead, suggest the cheaper steps first: give Claude a way to check its own work, then raise the effort setting, then change models.
 - **Pasted a whole file or a big dataset**: suggest @-mentioning the file instead.
 - **Accepting work they will have to explain to someone else** (a class, a manager, whoever takes it over): suggest asking Claude to explain the approach and its trade-offs in plain language.
 - **Repeating the same multi-step request across sessions**: suggest turning it into a custom skill or command.

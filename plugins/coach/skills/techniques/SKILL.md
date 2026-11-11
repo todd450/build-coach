@@ -1,6 +1,6 @@
 ---
 name: techniques
-description: Playbook of Claude Code techniques for people who direct an AI agent without reading code, from beginner to advanced (briefing, specs, planning, second-opinion review, verifying, git checkpoints, CLAUDE.md, context management, debugging, safety, teamwork, custom skills). Use when the user asks how to get Claude to do something, what the best way to work is, or wants to level up.
+description: Playbook of Claude Code techniques for people who direct an AI agent without reading code, from beginner to advanced (briefing, specs, planning, second-opinion review, verifying, git checkpoints, CLAUDE.md, context management, choosing a model, debugging, safety, teamwork, custom skills). Use when the user asks how to get Claude to do something, what the best way to work is, or wants to level up.
 ---
 
 # Claude Code techniques playbook
@@ -62,24 +62,38 @@ CLAUDE.md loads into every session, yours and every teammate's. Put context ther
 - Give the **exact** error message, what you did, and what you expected.
 - After two failed fixes, step back: "Stop fixing. What are the possible root causes? How could we test each one?"
 - Still stuck? Start a fresh session with a short summary of what you've tried.
+- A bigger model is the last thing to try, not the first (see technique 12).
 
 ### 🟡 11. Manage context
 Long sessions get sluggish and confused.
 - One session per task. Start a new session when you switch topics.
 - Before switching: "Summarize what we did and what's left, so I can start a new session." Then paste the summary into the new session.
 - `/compact` condenses a long conversation. `/clear` starts over.
+- Changing models? Do it at one of these breaks, after `/compact` or in a new session. The first message on a new model re-reads the whole conversation at full price, and the new model may not see the old one's reasoning.
 
-### 🟡 12. Safety and confidentiality
+### 🟡 12. Match the model to the job
+Claude comes in several sizes. Bigger models handle harder work and cost more per message, like staffing a task with an analyst or a partner. The default model is the right place to start.
+- **Step down** to a smaller model for simple, clearly defined work: a small fix, a feature the spec already describes, sorting or tagging a lot of items.
+- **Step up** to the largest model for the hardest work: restructuring a whole project, a complex financial model, deep research or analysis, or a long task you'll leave running.
+- **When the result isn't good enough, try these in order:**
+  1. Give Claude a way to check its own work: "Run it and compare the total with `data/source.csv`." This is usually cheaper and faster than anything else.
+  2. Raise the effort setting one level, which lets the same model think longer and check more. It can't supply skill the model doesn't have.
+  3. Then move up one model.
+- Change models in the app's model menu, or with `/model` in a terminal. Not sure the bigger model is worth it? Run the same task on two models and compare the results and what `/usage` reports.
+- Names change with each release. As of November 2026, smallest to largest: Haiku, Sonnet, Opus (the default), Fable.
+
+### 🟡 13. Safety and confidentiality
 - Read permission prompts before approving them. If you don't understand a command, ask "what does this do?" first.
 - API keys and passwords go in `.env`, which is listed in `.gitignore`. Never paste them into chat.
 - Confidential data (a partner company's, your employer's, your customers') stays in a gitignored folder and should never be uploaded to outside services. Check your course, employer, or NDA rules.
 
-### 🔵 13. Teamwork with git and GitHub
+### 🔵 14. Teamwork with git and GitHub
 - Each teammate works on a branch and opens a pull request. Ask Claude: "Review this pull request like a senior engineer."
 - Split work by area (frontend, data, research) so teammates don't edit the same files.
 - Run several Claude sessions in parallel, each on a different task in its own worktree.
 
-### 🔵 14. Automate your own workflow
+### 🔵 15. Automate your own workflow
 - Repeating the same multi-step request? Turn it into a **custom skill**: "Create a skill that regenerates our charts and exports them for the deck."
 - Use **subagents** for side research: "Use a subagent to research three competitors' pricing pages and summarize them."
+- Helpers that only search, read, or summarize can run on a smaller model, because their mistakes are easy to spot: "Use a subagent on the smallest model to read the logs and list each error." Keep edits and judgment calls on the main model.
 - **Connectors (MCP)** let Claude reach tools like Google Drive or Notion. In a course or at work, check which ones are approved before connecting one.
