@@ -12,8 +12,8 @@
 
 set -euo pipefail
 
-PLUGIN="coach@ucla-mba-claude-coach"
-MARKETPLACE="ucla-mba-claude-coach"
+PLUGIN="coach@build-coach"
+MARKETPLACE="build-coach"
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 INSTALLED="$HOME/.claude/plugins/installed_plugins.json"
 
