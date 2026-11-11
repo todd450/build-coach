@@ -56,11 +56,11 @@ This repo is the marketplace: whatever is on `main` is what students install. To
 **Option A: from a terminal (one time, works in the desktop app afterwards)**
 
 ```bash
-claude plugin marketplace add todd450/ucla-mba-claude-coach
+claude plugin marketplace add todd450/build-coach
 ```
 
 ```bash
-claude plugin install coach@ucla-mba-claude-coach
+claude plugin install coach@build-coach
 ```
 
 Then start a new session in the Claude desktop app's Code tab.
@@ -70,6 +70,20 @@ Then start a new session in the Claude desktop app's Code tab.
 Put `starter/.claude/settings.json` into a GitHub template repository for the course. When a team opens their copy of it in Claude Code and trusts the folder, Claude Code offers to install the coach marketplace and plugin.
 
 **First session:** open the project folder, then type `/coach:kickoff`.
+
+### Moving from the old name
+
+This marketplace was called `ucla-mba-claude-coach` until November 2026. If you installed it under that name, switch once:
+
+```bash
+claude plugin uninstall coach@ucla-mba-claude-coach
+```
+
+```bash
+claude plugin marketplace remove ucla-mba-claude-coach
+```
+
+Then follow Option A above. A project that carries the old `starter/.claude/settings.json` needs that file replaced with the current one. Nothing in your project's own files (CLAUDE.md, SPEC.md, PLAN.md) changes.
 
 ## Testing locally before you publish
 
@@ -88,11 +102,11 @@ claude --plugin-dir ./plugins/coach
 `--plugin-dir` only works from the terminal. To use the coach in the desktop app's Code tab while you refine it, install it from this folder into the projects you want, one time each:
 
 ```bash
-claude plugin marketplace add /path/to/ucla-mba-claude-coach
+claude plugin marketplace add /path/to/build-coach
 ```
 
 ```bash
-cd ~/code/some-project && claude plugin install coach@ucla-mba-claude-coach --scope local
+cd ~/code/some-project && claude plugin install coach@build-coach --scope local
 ```
 
 `--scope local` writes to that project's `.claude/settings.local.json`, which git ignores, so nothing lands in the project's history.
@@ -111,4 +125,4 @@ Then start a new session in those projects.
 - **Recommended stacks per project type:** edit `plugins/coach/skills/kickoff/references/project-types.md`. For example, add your course's required tools or approved hosting.
 - **Key formats the guard stops:** edit `PATTERNS` in `plugins/coach/hooks/secret-guard.sh`. It needs `bash`, so on Windows it runs only where Git Bash or WSL is installed.
 - **Course-specific rules** (approved connectors, data policies, AI-use disclosure): add them to `coaching-context.md` and to the kickoff `CLAUDE.md` template.
-- After a change, bump `version` in both `plugin.json` and `marketplace.json`. Students then run `claude plugin update coach@ucla-mba-claude-coach`.
+- After a change, bump `version` in both `plugin.json` and `marketplace.json`. Students then run `claude plugin update coach@build-coach`.

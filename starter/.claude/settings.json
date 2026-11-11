@@ -1,13 +1,13 @@
 {
   "extraKnownMarketplaces": {
-    "ucla-mba-claude-coach": {
+    "build-coach": {
       "source": {
         "source": "github",
-        "repo": "todd450/ucla-mba-claude-coach"
+        "repo": "todd450/build-coach"
       }
     }
   },
   "enabledPlugins": {
-    "coach@ucla-mba-claude-coach": true
+    "coach@build-coach": true
   }
 }
