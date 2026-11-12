@@ -20,7 +20,7 @@ If the user has sent fewer than three real requests in this session, say there i
 ## Assess five habits
 1. **Briefing**: do requests give the goal, context, constraints, and what done looks like?
 2. **Planning**: is "done" agreed before building (SPEC.md), and are big tasks planned and split into steps?
-3. **Verifying**: do they have Claude run, test, or show results before moving on, and get a second opinion (`/coach:check`) before relying on a milestone?
+3. **Verifying**: do they have Claude run, test, or show results before moving on?
 4. **Checkpointing**: do they commit working states, and start fresh sessions for new tasks?
 5. **Understanding**: do they ask Claude to explain decisions they'll have to explain to someone else?
 
@@ -34,6 +34,6 @@ Use exactly this structure:
 - **Try instead:** a rewritten version of that prompt, ready to copy.
 - Why it's better, in one sentence. Use a business analogy when it helps (delegating to an analyst, writing a project brief).
 
-**Try next session**: one technique from the `techniques` skill that fits their level, with a one-line how-to for the Claude desktop app.
+**Try next session**: one technique that fits their level, with a one-line how-to for the Claude desktop app.
 
 Be candid and encouraging, like a good manager in a 1:1. Don't grade, score, or pad. If they're doing well, say so and suggest a more advanced technique.

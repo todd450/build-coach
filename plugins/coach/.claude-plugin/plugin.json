@@ -1,7 +1,7 @@
 {
   "name": "coach",
-  "version": "0.4.0",
-  "description": "Claude Code coaching for people who direct an AI agent without reading code, on course, work, or personal projects: a guided project kickoff, in-the-moment coach tips, a plain-language second opinion, and feedback on how you work with Claude.",
+  "version": "0.5.0",
+  "description": "Claude Code coaching for people who direct an AI agent without reading code, on course, work, or personal projects: a guided project kickoff, in-the-moment coach tips, and feedback on how you work with Claude.",
   "author": {
     "name": "Todd Holloway"
   },

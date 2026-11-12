@@ -5,11 +5,9 @@ A Claude Code plugin that helps people get better at working with Claude **while
 | What | How it's used |
 |---|---|
 | **Project kickoff** | `/coach:kickoff`: asks what the project is for (course, work, or personal), interviews you, recommends an approach that fits your skills, and writes `CLAUDE.md`, a one-page `SPEC.md` (features with "done when" checks), `PLAN.md`, `.gitignore`, and a first git commit. Ends with three ready-to-use first prompts. |
-| **Second opinion** | `/coach:check`: a fresh reviewer checks what was built against `SPEC.md` and reports, in plain language, what works, what to fix, and the few things you should look at yourself. |
 | **Pasted-key guard** | Always on. A message that contains an API key or private key is stopped before it reaches Claude, with instructions for using `.env` instead. |
 | **In-the-moment coaching** | Always on. When there's a real teaching moment (a vague prompt, a huge request with no plan, accepting changes without testing, no commits), Claude adds one short **Coach tip** to the end of its reply. |
 | **Feedback on demand** | `/coach:review`: candid feedback on how you've worked with Claude in this session, with your own prompts rewritten. |
-| **Technique playbook** | Loads automatically when someone asks "how do I get Claude to…?" Fifteen techniques, from beginner to advanced. |
 
 The coaching is controlled from the project's `CLAUDE.md`, which `/coach:kickoff` writes:
 
@@ -40,11 +38,8 @@ plugins/coach/
   hooks/hooks.json                  ← SessionStart hook that loads the coaching brief; UserPromptSubmit hook for the key guard
   hooks/coaching-context.md         ← the always-on coaching instructions (edit to tune tone and frequency)
   hooks/secret-guard.sh             ← stops messages that contain an API key (edit PATTERNS to add key formats)
-  skills/kickoff/                   ← /coach:kickoff, plus CLAUDE.md, SPEC.md and PLAN.md templates and project-type guide
-  skills/check/                     ← /coach:check
+  skills/kickoff/                   ← /coach:kickoff, plus CLAUDE.md, SPEC.md and PLAN.md templates
   skills/review/                    ← /coach:review
-  skills/techniques/                ← technique playbook (loads automatically)
-starter/.claude/settings.json       ← drop into a course starter repo to auto-offer the plugin
 ```
 
 ## Publishing updates (instructor)
@@ -53,7 +48,7 @@ This repo is the marketplace: whatever is on `main` is what students install. To
 
 ## Installing it
 
-**Option A: from a terminal (one time, works in the desktop app afterwards)**
+From a terminal, one time (it works in the desktop app afterwards):
 
 ```bash
 claude plugin marketplace add todd450/build-coach
@@ -65,25 +60,7 @@ claude plugin install coach@build-coach
 
 Then start a new session in the Claude desktop app's Code tab.
 
-**Option B: a course starter repo (no terminal needed)**
-
-Put `starter/.claude/settings.json` into a GitHub template repository for the course. When a team opens their copy of it in Claude Code and trusts the folder, Claude Code offers to install the coach marketplace and plugin.
-
 **First session:** open the project folder, then type `/coach:kickoff`.
-
-### Moving from the old name
-
-This marketplace was called `ucla-mba-claude-coach` until November 2026. If you installed it under that name, switch once:
-
-```bash
-claude plugin uninstall coach@ucla-mba-claude-coach
-```
-
-```bash
-claude plugin marketplace remove ucla-mba-claude-coach
-```
-
-Then follow Option A above. A project that carries the old `starter/.claude/settings.json` needs that file replaced with the current one. Nothing in your project's own files (CLAUDE.md, SPEC.md, PLAN.md) changes.
 
 ## Testing locally before you publish
 
@@ -122,7 +99,6 @@ Then start a new session in those projects.
 ## Tuning
 
 - **Tip frequency and tone:** edit `plugins/coach/hooks/coaching-context.md`. It's injected into every session, so keep it short.
-- **Recommended stacks per project type:** edit `plugins/coach/skills/kickoff/references/project-types.md`. For example, add your course's required tools or approved hosting.
 - **Key formats the guard stops:** edit `PATTERNS` in `plugins/coach/hooks/secret-guard.sh`. It needs `bash`, so on Windows it runs only where Git Bash or WSL is installed.
 - **Course-specific rules** (approved connectors, data policies, AI-use disclosure): add them to `coaching-context.md` and to the kickoff `CLAUDE.md` template.
 - After a change, bump `version` in both `plugin.json` and `marketplace.json`. Students then run `claude plugin update coach@build-coach`.
