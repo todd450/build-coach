@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/build-coach-logo-cream.svg" alt="Build Coach: the modern way to build" width="520"></p>
+
 # Build Coach
 
 A Claude Code plugin that helps people get better at working with Claude **while** they build something. It is for anyone who directs an AI agent without reading the code it writes. It was built for UCLA MBA team course projects, and it works the same way for a project at work or a personal one.
