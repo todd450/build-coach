@@ -10,8 +10,8 @@
     {
       "name": "coach",
       "source": "./plugins/coach",
-      "description": "Guided project kickoff, in-the-moment coach tips, a plain-language second opinion, and feedback on how you work with Claude Code.",
-      "version": "0.4.0"
+      "description": "Guided project kickoff, in-the-moment coach tips, and feedback on how you work with Claude Code.",
+      "version": "0.5.0"
     }
   ]
 }

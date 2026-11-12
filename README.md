@@ -5,11 +5,9 @@ A Claude Code plugin that helps people get better at working with Claude **while
 | What | How it's used |
 |---|---|
 | **Project kickoff** | `/coach:kickoff`: asks what the project is for (course, work, or personal), interviews you, recommends an approach that fits your skills, and writes `CLAUDE.md`, a one-page `SPEC.md` (features with "done when" checks), `PLAN.md`, `.gitignore`, and a first git commit. Ends with three ready-to-use first prompts. |
-| **Second opinion** | `/coach:check`: a fresh reviewer checks what was built against `SPEC.md` and reports, in plain language, what works, what to fix, and the few things you should look at yourself. |
 | **Pasted-key guard** | Always on. A message that contains an API key or private key is stopped before it reaches Claude, with instructions for using `.env` instead. |
 | **In-the-moment coaching** | Always on. When there's a real teaching moment (a vague prompt, a huge request with no plan, accepting changes without testing, no commits), Claude adds one short **Coach tip** to the end of its reply. |
 | **Feedback on demand** | `/coach:review`: candid feedback on how you've worked with Claude in this session, with your own prompts rewritten. |
-| **Technique playbook** | Loads automatically when someone asks "how do I get Claude to…?" Fifteen techniques, from beginner to advanced. |
 
 The coaching is controlled from the project's `CLAUDE.md`, which `/coach:kickoff` writes:
 
@@ -41,9 +39,7 @@ plugins/coach/
   hooks/coaching-context.md         ← the always-on coaching instructions (edit to tune tone and frequency)
   hooks/secret-guard.sh             ← stops messages that contain an API key (edit PATTERNS to add key formats)
   skills/kickoff/                   ← /coach:kickoff, plus CLAUDE.md, SPEC.md and PLAN.md templates and project-type guide
-  skills/check/                     ← /coach:check
   skills/review/                    ← /coach:review
-  skills/techniques/                ← technique playbook (loads automatically)
 starter/.claude/settings.json       ← drop into a course starter repo to auto-offer the plugin
 ```
 

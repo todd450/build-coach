@@ -61,6 +61,6 @@ Do **not** create a GitHub repo or push without asking. Do offer it in terms tha
 Finish with:
 1. A two-line summary of what's set up.
 2. **"Your first three prompts"**: three specific, copy-pasteable prompts for milestone 1 of *their* project. Each should model a good brief (goal, context, constraints, what done looks like). Make the first one a planning prompt, for example "Read SPEC.md and PLAN.md and propose how to build milestone 1. Don't write code yet."
-3. One line: "Run `/coach:check` when a milestone works, for a second opinion on what was built, and `/coach:review` any time for feedback on how you're working with Claude."
+3. One line: "Run `/coach:review` any time for feedback on how you're working with Claude."
 
 Keep the final message under about 250 words.

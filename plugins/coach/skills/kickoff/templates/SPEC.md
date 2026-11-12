@@ -1,6 +1,6 @@
 # {{Project name}}: Spec
 
-<!-- One page. This is what "done" means. Claude builds from it and /coach:check reviews against it. Change it when you change your mind, and note why in PLAN.md's decisions log. -->
+<!-- One page. This is what "done" means. Claude builds from it. Change it when you change your mind, and note why in PLAN.md's decisions log. -->
 
 ## Who it's for
 {{The user, in one or two sentences: who they are and the situation they're in when they need this.}}
