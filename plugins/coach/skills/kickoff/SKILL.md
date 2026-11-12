@@ -37,20 +37,18 @@ Round 2, fitted to the context. Ask only what you still need:
 Don't ask a solo builder about team roles, and don't invent a deadline for someone who has none.
 
 ## Step 3: Recommend an approach
-Read `${CLAUDE_SKILL_DIR}/references/project-types.md` and recommend **one** approach matched to the deliverable and the least experienced builder (the user themself if they're working alone). Explain the trade-off in business terms (time to a first working version, cost, how hard it is to change later, how easy it is to show to others) in four to six lines. Offer one alternative. Let them choose.
+Recommend **one** approach matched to the deliverable and the least experienced builder (the user themself if they're working alone). Prefer the fastest path to something they can show working; a project can grow into a heavier stack later. Explain the trade-off in business terms (time to a first working version, cost, how hard it is to change later, how easy it is to show to others) in four to six lines. Offer one alternative. Let them choose.
 
 ## Step 4: Propose the setup, then write it
-Show a short list of the files and folders you'll create, and get a yes. Then create:
+Show a short list of the files you'll create, and get a yes. Then create:
 - **CLAUDE.md**, from `${CLAUDE_SKILL_DIR}/templates/CLAUDE.md`. Fill in everything you learned. Leave a clear `TODO` where something is unknown instead of guessing. Set the Coaching section from their answers: the context from round 1, the experience level of the least experienced builder, their learning goals, and `Coach tips: on` unless they asked otherwise. For a solo builder, replace the Team table with one line saying who is building it.
 - **SPEC.md**, from `${CLAUDE_SKILL_DIR}/templates/SPEC.md`. Write it before the plan: who it's for, the problem, 3–6 features each with "done when" checks a non-coder can run, and what's not being done. Draft it from the interview, then show the feature list and ask them to correct it before you go on. Explain in one sentence that the spec is the brief Claude builds from, the same way a PRD briefs an engineering team.
-- **PLAN.md**, from `${CLAUDE_SKILL_DIR}/templates/PLAN.md`. Lay out 4–6 milestones, each with a checklist and a "how we'll know it works" line. Each milestone delivers named features from SPEC.md, and its "how we'll know it works" line points to their checks. With a deadline, work backwards from it and date each milestone. With no deadline, order the milestones and leave the dates out. The last milestone depends on the context:
+- **PLAN.md**, from `${CLAUDE_SKILL_DIR}/templates/PLAN.md`. Lay out 4–6 milestones, each with a checklist and a "how we'll know it works" line. Make milestone 1 the smallest thing that works end to end. Each milestone delivers named features from SPEC.md, and its "how we'll know it works" line points to their checks. With a deadline, work backwards from it and date each milestone. With no deadline, order the milestones and leave the dates out. The last milestone depends on the context:
   - course: **Presentation-ready** (a demo script, known limitations, and talking points on how it was built with Claude).
   - work: **Ready to hand over** (how to run it, known limitations, who owns it, and what it must never be used for).
   - personal: **Ready to use or share** (how to run it and known limitations).
 - **.gitignore**, suited to the stack. Always include `.env`, `.DS_Store`, and any folder that holds confidential data.
 - **.env.example** if the project will use API keys. Explain in one sentence why real keys go in `.env` and never in chat or in git.
-- The starter folder layout for the chosen project type. Keep it empty: no app code yet.
-- A short **README.md**: project name, one-paragraph pitch, how to run it (TODO for now).
 
 ## Step 5: First checkpoint
 If it isn't a git repo yet, run `git init`, then commit everything with the message `Project kickoff: plan and Claude Code setup`. Explain in two sentences that a commit is a saved checkpoint they can always return to, and that committing after each working step is a habit worth building.

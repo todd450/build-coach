@@ -15,7 +15,6 @@
 ## How we work
 - Stack: {{e.g., Python + Streamlit}}. Chosen because {{one-line reason}}.
 - Run it: `{{command}}` (TODO until milestone 1).
-- Folder layout: {{short description}}.
 - Secrets live in `.env` (see `.env.example`). Never commit them or paste them into chat.
 - {{If any data is confidential (a partner company's, an employer's, customers'): Data in `data/private/` is confidential. Never upload it to outside services.}}
 - {{If an employer or course has rules on AI tools or approved services: state them here.}}
